@@ -1,0 +1,8 @@
+.cricket_card{
+    width: 250px;
+    height: 250px;
+    background-color: #eee;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}

@@ -1,0 +1,31 @@
+.title_header{
+    margin-top: 40px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title_header h1{
+    font-size: 58px;
+}
+.title_header div{
+    margin-right: 20px;
+    display: flex;
+}
+.title_header div button:first-child{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border: none;
+    font-size: 18px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.title_header div button:last-child{
+    background-color: #3e7320;
+    padding: 15px 30px;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}

@@ -1,0 +1,38 @@
+.cricket_score{
+  margin-top: 50px;
+  padding: 0 20px;  
+}
+.cricket_score_header{
+    width: 100%;
+    display: flex;
+}
+.ipl{
+    padding: 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #777;
+}
+.ipl p{
+    font-weight: 600;
+}
+.ipl img{
+    width: 30px;
+    margin-right: 10px;
+}
+.ipl_day{
+    margin-left: 20px;
+    padding: 20px 40px;
+    border-radius: 30px;
+    border: 1px solid #777;
+    display: flex;
+    align-items: center;
+}
+.ipl_day p{
+    font-weight: 600;
+}
+.cricket_scores_container{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+}
