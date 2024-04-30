@@ -7,6 +7,9 @@ import CricketScore from '../../components/CricketScore/CricketScore';
 import BreakingNews from '../../components/BreakingNews/BreakingNews';
 import LatestNews from '../../components/LatestNews/LatestNews';
 import PopularNews from '../../components/PopularNews/PopularNews';
+import TopHeadlines from '../../components/TopHeadlines/TopHeadlines';
+import Subscribe from '../../components/Subscribe/Subscribe';
+import footer from "../../assets/footer.png";
 
 
 const Homepage = () => {
@@ -24,7 +27,12 @@ const Homepage = () => {
         <CricketScore/>
         <BreakingNews />
         <LatestNews />
-        <PopularNews />
+        <div style={{display: "flex", justifyContent: "space-between", margin: "50px 20px"}}>
+          <PopularNews />
+          <TopHeadlines />
+        </div>
+        {/* <Subscribe /> */}
+        <img src={footer} alt="" />
     </div>
   )
 }
