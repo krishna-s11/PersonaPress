@@ -5,3 +5,9 @@
     margin: 0 auto;
     padding: 30px;
 }
+.news_card_title{
+    cursor: pointer;
+}
+.news_card_title:hover{
+    color: #774;
+}

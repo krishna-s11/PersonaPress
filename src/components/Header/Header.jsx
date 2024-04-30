@@ -3,9 +3,17 @@ import "./header.css";
 import cloudy from "../../assets/cloudy.png";
 
 const Header = () => {
+  const date = new Date();
+  const day = date.getDay();
+  const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const currentDate = date.getDate();
+  const currentMonth = month[date.getMonth()];
+  const currentYear = date.getFullYear();
+  console.log(date);
   return (
     <div className='header'>
-        <p id="header_date">Saturday, 20 Apr 2024</p>
+        <p id="header_date">{days[day]}, {`${currentDate} ${currentMonth} ${currentYear}`}</p>
         <div>
             <p style={{marginRight: "10px"}}>Noida,</p>
             <img src={cloudy} alt="" srcset="" />

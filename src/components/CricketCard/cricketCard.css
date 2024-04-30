@@ -1,8 +1,16 @@
 .cricket_card{
-    width: 250px;
-    height: 250px;
-    background-color: #eee;
+    width: 280px;
+    height: 170px;
+    background-color: #fff;
+    border: 1px solid #eee;
     margin-right: 20px;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.match_teams{
+    display: flex;
+    margin: 20px 0;
+    justify-content: space-evenly;
+    align-items: center;
 }

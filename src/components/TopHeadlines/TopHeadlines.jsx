@@ -3,6 +3,7 @@ import "./topHeadlines.css";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import gym from "../../assets/cathy-pham-3jAN9InapQI-unsplash.jpg"
 import prix from "../../assets/brian-mccall-QhiA6DdlgiM-unsplash.jpg";
+import { Link } from 'react-router-dom';
 
 const TopHeadlines = () => {
   const [breakingNews,setBreakingNews] = useState(null);
@@ -27,7 +28,7 @@ const TopHeadlines = () => {
         breakingNews && 
           <div className='topheadline_main'>
             <img src={breakingNews[0].urlToImage} alt="" srcset="" />
-            <h3>{breakingNews[0].title}</h3>
+            <Link to={'/news'} state={{news: breakingNews[0]}}><h3 class='news_card_title'>{breakingNews[0].title}</h3></Link>
           </div>
 
       }
@@ -37,7 +38,7 @@ const TopHeadlines = () => {
                 <div className='topheadline_card'>
                   <img src={breakingNews[1].urlToImage} alt="" srcset="" />
                   <div className='topheadline_card_right'>
-                    <p>{breakingNews[1].title}</p>
+                    <Link to={'/news'} state={{news: breakingNews[1]}}><p class='news_card_title'>{breakingNews[1].title}</p></Link>
                     <div className='topheadline_card_subtitle'>
                       <p id='subtitle'>{breakingNews[1].source.name} | {breakingNews[1].publishedAt.split('T')[0]}</p>
                     </div>
@@ -49,7 +50,7 @@ const TopHeadlines = () => {
                 <div className='topheadline_card'>
                   <img src={breakingNews[2].urlToImage} alt="" srcset="" />
                   <div className='topheadline_card_right'>
-                    <p>{breakingNews[2].title}</p>
+                  <Link to={'/news'} state={{news: breakingNews[2]}}><p class='news_card_title'>{breakingNews[2].title}</p></Link>
                     <div className='topheadline_card_subtitle'>
                       <p id='subtitle'>{breakingNews[2].source.name} | {breakingNews[2].publishedAt.split('T')[0]}</p>
                     </div>

@@ -5,6 +5,7 @@ import icehockey from "../../assets/markus-spiske-AeUZfT1uzpo-unsplash.jpg";
 import football from "../../assets/jeffrey-f-lin-QV47mIeSm64-unsplash.jpg";
 import { IoEye } from "react-icons/io5";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 
 
@@ -41,7 +42,7 @@ const LatestNews = () => {
                                     <img src={news.urlToImage} alt="" />
                                 </div>
                                 <div className='latest_news_card_right'>
-                                    <h2>{news.title}</h2>
+                                    <Link to={'/news'} state={{news: news}}><h2 class='news_card_title'>{news.title}</h2></Link>
                                     <p>{news.description}</p>
                                     <div className='latest_news_card_info'>
                                         <p>{news.source.name} | {news.publishedAt.split('T')[0]}</p>

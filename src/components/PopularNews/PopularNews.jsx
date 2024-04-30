@@ -5,6 +5,7 @@ import rugby from "../../assets/quino-al-XAlKHW9ierw-unsplash.jpg";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import basketball from "../../assets/markus-spiske-BfphcCvhl6E-unsplash.jpg";
 import usa from "../../assets/ben-o-bro-wpU4veNGnHg-unsplash.jpg";
+import { Link } from 'react-router-dom';
 
 const PopularNews = () => {
     const [breakingNews,setBreakingNews] = useState(null);
@@ -31,7 +32,7 @@ const PopularNews = () => {
                 <>
                 <div className='popular_main'>
                   <div className='popular_main_left'>
-                    <h2>{breakingNews[0].title}</h2>
+                    <Link to={'/news'} state={{news: breakingNews[0]}}><h2 class='news_card_title'>{breakingNews[0].title}</h2></Link> 
                     <p>{breakingNews[0].description}</p>
                   </div>
                   <div className='popular_main_right'>
@@ -47,7 +48,7 @@ const PopularNews = () => {
                 breakingNews && 
                   <div className='popular_secondary_card'>
                     <img src={breakingNews[1].urlToImage} alt="" srcset="" />
-                    <h3>{breakingNews[1].title}</h3>
+                    <Link to={'/news'} state={{news: breakingNews[1]}}><h3 class='news_card_title'>{breakingNews[1].title}</h3></Link>
                     <p className='popular_subtitle'>{breakingNews[1].source.name} | {breakingNews[1].publishedAt.split("T")[0]}</p>
                   </div>
               }
@@ -55,7 +56,7 @@ const PopularNews = () => {
                 breakingNews && 
                   <div className='popular_secondary_card'>
                     <img src={breakingNews[2].urlToImage} alt="" srcset="" />
-                    <h3>{breakingNews[2].title}</h3>
+                    <Link to={'/news'} state={{news: breakingNews[2]}}><h3 class='news_card_title'>{breakingNews[2].title}</h3></Link>
                     <p className='popular_subtitle'>{breakingNews[2].source.name} | {breakingNews[2].publishedAt.split("T")[0]}</p>
                   </div>
               }
