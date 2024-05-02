@@ -23,7 +23,7 @@ const TopHeadlines = () => {
   console.log(breakingNews);
   return (
     <div className='topheadline_section'>
-      <h1>Top Headlines <MdKeyboardArrowRight style={{color: "#3e7320", fontSize: "60px", fontWeight: "600", marginLeft: "10px"}}/></h1>
+      <h1>World News <MdKeyboardArrowRight style={{color: "#3e7320", fontSize: "60px", fontWeight: "600", marginLeft: "10px"}}/></h1>
       {
         breakingNews && 
           <div className='topheadline_main'>

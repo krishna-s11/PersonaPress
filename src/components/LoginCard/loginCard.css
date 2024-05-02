@@ -1,0 +1,101 @@
+.login_card{
+    width: 450px;
+    height: 590px;
+    box-shadow: 0 0px 15px rgba(0,0,0,0.3);
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.login_card_top{
+    width: 100%;
+    height: 90%;
+    text-align: center;
+    padding-top: 50px;
+}
+.login_card_top h2{
+    margin-top: 10px;
+}
+.login_card_top p{
+    margin-top: 10px;
+    color: #888;
+    letter-spacing: 0.8px;
+}
+.social_login_container{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+.btn_google{
+    background-color: #fff;
+    border: none;
+    width: 166px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    margin-right: 15px;
+}
+.btn_facebook{
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    padding: 10px;
+    width: 166px;
+    justify-content: center;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+.login_card_bottom{
+    width: 100%;
+    height: 10%;
+    background-color: #f7f7f8;
+    padding: 20px 0;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+.login_credentail_box{
+    width: 90%;
+    margin: 20px auto;
+    text-align: left;
+}
+.login_credentail_box p{
+    letter-spacing: normal !important;
+}
+.login_credentail_box input{
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+    margin-top: 5px;
+}
+.btn_signin{
+    margin-top: 40px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    background-color: #393a40;
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+}
+.login_card_bottom{
+    text-align: center;
+    color: #888;;
+}
+
+

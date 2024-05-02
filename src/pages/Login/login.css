@@ -1,0 +1,30 @@
+.login_pg{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.login_header{
+    width: 100vw;
+    padding: 20px 120px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    background-color: #fff;
+    margin-left: -30px ;
+    margin-top: -30px;
+    display: flex;
+    justify-content: space-between;
+}
+.login_header button{
+    background-color: #3e7320;
+    padding: 15px 30px;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.login_pg_container{
+    width: 100%;
+    height: calc(100vh - 86px) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

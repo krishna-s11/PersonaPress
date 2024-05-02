@@ -10,9 +10,11 @@ import PopularNews from '../../components/PopularNews/PopularNews';
 import TopHeadlines from '../../components/TopHeadlines/TopHeadlines';
 import Subscribe from '../../components/Subscribe/Subscribe';
 import footer from "../../assets/footer.png";
+import { useNavigate } from 'react-router-dom';
 
 
 const Homepage = () => {
+  const navigate = useNavigate();
   return (
     <div>
         <Header />
@@ -20,7 +22,7 @@ const Homepage = () => {
             <h1><span style={{color: "#3e7320"}}>Persona</span>Press</h1>
             <div>
                 <button><IoMdMail style={{marginRight: "3px"}}/>Subscribe</button>
-                <button>Login</button>
+                <button onClick={() => {navigate('/login')}}>Login</button>
             </div>
         </div>
         <Navbar />
