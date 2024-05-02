@@ -21,11 +21,30 @@
     margin-right: 20px;
     cursor: pointer;
 }
-.title_header div button:last-child{
+.btn_your_feed{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border: none;
+    font-size: 18px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.btn_login{
     background-color: #3e7320;
     padding: 15px 30px;
     border-radius: 30px;
     border: none;
     color: #fff;
     cursor: pointer;
+}
+.logged_box{
+    display: flex;
+    align-items: center;
+}
+#user_img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #777;
 }

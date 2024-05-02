@@ -34,7 +34,7 @@ const CricketScore = () => {
                 cricketScore && cricketScore.map((match,index) => {
                     if(index < 5){
                         return (
-                            <CricketCard match={match} />
+                            <CricketCard match={match} key={index} />
                         )
                     }
                 })

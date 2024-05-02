@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./loginCard.css";
 import { RiLoginCircleFill } from "react-icons/ri";
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import axios from "axios";
+import { AuthContext } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 
 
@@ -14,6 +17,9 @@ const LoginCard = ({setSignup}) => {
         email: "",
         password: "",
     })
+    const [loading, setLoading] = useState(false);
+    const {setCurrentUser} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setDetails({
@@ -25,9 +31,13 @@ const LoginCard = ({setSignup}) => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https//localhost:8080/signup', details)
-            const result = await response.json();
+            setLoading(true);
+            const response = await axios.post('http://localhost:8080/login', details)
+            setCurrentUser(response.data);
+            setLoading(false);
+            navigate("/")
         } catch (error) {
+            setLoading(false);
             console.error("Error encountered", error);
         }
     }
@@ -47,7 +57,12 @@ const LoginCard = ({setSignup}) => {
                 <input type="email" name="email" onChange={handleChange}/>
                 <p style={{marginTop: "10px"}}>Password</p>
                 <input type="password" name="password" onChange={handleChange}/>
-                <button className='btn_signin'>Sign In <FaLongArrowAltRight style={{marginLeft: "10px"}}/></button>
+                <button className='btn_signin' onClick={handleLogin} disabled={false}>
+                    {
+                        loading?<Loading />:'Sign in'
+                    }
+                    <FaLongArrowAltRight style={{marginLeft: "10px"}}/>
+                </button>
             </div>
         </div>
         <div className='login_card_bottom'>

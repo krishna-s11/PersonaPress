@@ -22,7 +22,6 @@ const PopularNews = () => {
         fetchNews();
     },[]);
 
-    console.log(breakingNews);
   return (
     <div className='popular_pg'>
         <div className='popular_news'>

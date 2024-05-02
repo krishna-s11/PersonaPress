@@ -2,7 +2,6 @@ import React from 'react'
 import "./cricketCard.css"
 
 const CricketCard = ({match}) => {
-  console.log(match);
   return (
     <div className='cricket_card'>
       <p style={{color: "#777"}}>{`${match.dateTimeGMT.split("T")[0]} | ${match.dateTimeGMT.split("T")[1]}`}</p>

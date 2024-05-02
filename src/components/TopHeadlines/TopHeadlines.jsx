@@ -20,7 +20,6 @@ const TopHeadlines = () => {
       fetchNews();
   },[]);
 
-  console.log(breakingNews);
   return (
     <div className='topheadline_section'>
       <h1>World News <MdKeyboardArrowRight style={{color: "#3e7320", fontSize: "60px", fontWeight: "600", marginLeft: "10px"}}/></h1>

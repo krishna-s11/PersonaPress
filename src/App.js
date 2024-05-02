@@ -8,15 +8,17 @@ import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path='/' element={<Homepage />}/>
-        <Route path='/news/:category' element={<NewsGeneral />}/>
-        <Route path='/news' element={<NewsDetail />}/>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/feed' element={<AuthProvider><Login /></AuthProvider>}/>
-      </Routes>
-    </div>
+    <AuthProvider>
+      <div className="App">
+        <Routes>
+          <Route path='/' element={<Homepage />}/>
+          <Route path='/news/:category' element={<NewsGeneral />}/>
+          <Route path='/news' element={<NewsDetail />}/>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/feed' element={<NewsGeneral />}/>
+        </Routes>
+      </div>
+    </AuthProvider>
   );
 }
 

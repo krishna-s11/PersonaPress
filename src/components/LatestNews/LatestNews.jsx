@@ -24,9 +24,6 @@ const LatestNews = () => {
         fetchNews();
     },[]);
 
-    console.log(breakingNews);
-
-
   return (
     <div className='latest_news'>
         <div className='latest_news_header'>

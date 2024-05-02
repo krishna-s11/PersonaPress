@@ -3,6 +3,7 @@ import "./signupCard.css";
 import { RiLoginCircleFill } from "react-icons/ri";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import axios from "axios";
+import Loading from '../Loading/Loading';
 
 const SignupCard = ({setSignup}) => {
   const [details,setDetails] = useState({
@@ -10,6 +11,7 @@ const SignupCard = ({setSignup}) => {
     email: "",
     password: "",
   });
+  const [loading,setLoading] = useState(false);
 
   const handleChange = e => {
     setDetails({
@@ -21,8 +23,10 @@ const SignupCard = ({setSignup}) => {
   const handleSignup = async (e) => { 
     e.preventDefault();
     try {
-      const response = await axios.post('https//localhost:8080/signup', details)
-      const result = await response.json();
+      setLoading(true);
+      const response = await axios.post('http://localhost:8080/signup', details)
+      const addNews = await axios.post(`http://localhost:8080/bulk-news/${response.data._id}`)
+      setLoading(false);
       setSignup();
     } catch (error) {
       console.error("Error encountered", error);
@@ -42,7 +46,12 @@ const SignupCard = ({setSignup}) => {
                 <input type="email" name="email" onChange={handleChange}/>
                 <p style={{marginTop: "10px"}}>Password</p>
                 <input type="password" name="password" onChange={handleChange}/>
-                <button className='btn_signin'>Sign Up <FaLongArrowAltRight style={{marginLeft: "10px"}}/></button>
+                <button className='btn_signin' onClick={handleSignup} disabled={loading}>
+                  {
+                    loading?<Loading />:'Sign up'
+                  }
+                   <FaLongArrowAltRight style={{marginLeft: "10px"}}/>
+                </button>
             </div>
         </div>
         <div className='signup_card_bottom'>

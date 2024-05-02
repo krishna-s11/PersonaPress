@@ -10,7 +10,6 @@ const Header = () => {
   const currentDate = date.getDate();
   const currentMonth = month[date.getMonth()];
   const currentYear = date.getFullYear();
-  console.log(date);
   return (
     <div className='header'>
         <p id="header_date">{days[day]}, {`${currentDate} ${currentMonth} ${currentYear}`}</p>

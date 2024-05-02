@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./newsGeneral.css";
 import Header from '../../components/Header/Header';
 import Navbar from '../../components/Navbar/Navbar';
 import NewsCard from '../../components/NewsCard/NewsCard';
-import { useParams } from 'react-router';
+import { useLocation, useParams } from 'react-router';
+import { AuthContext } from '../../context/AuthContext';
+import axios from 'axios';
 
 const NewsGeneral = () => {
     
     const {category} = useParams();
+    const location = useLocation();
+    const [news,setNews] = useState();
+    const {currentUser} = useContext(AuthContext);
 
   return (
     <div className='news_general_pg'>
@@ -24,11 +29,17 @@ const NewsGeneral = () => {
                 category === 'business' && <h1>Finance News</h1> 
             }
             {
-                category !== 'national' || category !== 'current' || category !== 'business'  &&  <h1>{category.charAt(0).toUpperCase() + category.slice(1)} News</h1>
+                !(category === 'national' || category === 'current' || category === 'business')  &&  <h1>{category?category.charAt(0).toUpperCase() + category?.slice(1):'Your'} {category?'News': 'Feed'}</h1>
             }
         </div>
         <div className='news_container'>
-            <NewsCard />
+            {
+                location.pathname.includes('feed')?
+                    <NewsCard userNews={currentUser?.news}/>
+                :
+                    <NewsCard />
+
+            }
         </div>
     </div>
   )
